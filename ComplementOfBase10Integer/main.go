@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(bitwiseComplement(5))
+	fmt.Println(bitwiseComplement(1000010301213012312))
 }
 
 func bitwiseComplement(N int) int {
