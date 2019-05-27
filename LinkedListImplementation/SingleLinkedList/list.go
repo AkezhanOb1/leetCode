@@ -1,5 +1,9 @@
 package list
 
+import (
+	"sort"
+)
+
 // Node - represents single record in the Linked List
 // it has two filds, actual value and the reference to the next node
 // if there is no next node Next field will contain a nil value 
@@ -179,6 +183,24 @@ func (l *LinkedList) Reverse() *LinkedList{
 	}
 	l.Pop()
 	return l
+}
+
+//SortList - sorts linked integer linked lists with time complexity n*Log(n)
+func (l *LinkedList) SortList() {
+    res := []int{}
+    head := l.Head
+    for head != nil {
+        res = append(res, head.Val)
+        head = head.Next
+    }
+    head = l.Head
+    counter := 0
+    sort.Ints(res)
+    for head != nil {
+        head.Val = res[counter]
+        counter++
+        head = head.Next
+    }
 }
 
 

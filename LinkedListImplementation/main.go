@@ -8,16 +8,24 @@ import (
 func main() {
 	firstList := list.LinkedList{}
 	firstList.Push(1)
+	firstList.Push(3)
 	firstList.Push(2)
 	firstList.Push(4)
+	firstList.Push(5)
+	firstList.Push(8)
+	firstList.Push(7)
+	firstList.Push(6)
 	
-	secondList := list.LinkedList{}
-	secondList.Push(1)
-	secondList.Push(3)
-	secondList.Push(4)
-
-	newList := list.MergeTwoLists(firstList, secondList)
-	head := newList.Head
+	head := firstList.Head
+	for {
+		if head == nil {
+			break
+		}
+		fmt.Println(head.Val)
+		head = head.Next
+	}
+	firstList.SortList()
+	head = firstList.Head
 	for {
 		if head == nil {
 			break
